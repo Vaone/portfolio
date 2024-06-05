@@ -1,0 +1,15 @@
+export const skillItems = [
+  { icon: 'js', title: 'javascript' },
+  { icon: 'ts', title: 'TYPESCRIPT' },
+  { icon: 'mongo', title: 'MONGO DB' },
+  { icon: 'postgresql', title: 'POSTGRESQL' },
+  { icon: 'jest', title: 'JEST' },
+  { icon: 'express', title: 'EXPRESS JS' },
+  { icon: 'nestjs', title: 'NEST JS' },
+  { icon: 'docker', title: 'DOKER' },
+  { icon: 'react', title: 'REACT JS' },
+  { icon: 'reactnative', title: 'REACT NATIVE' },
+  { icon: 'styledcomponent', title: 'STYLED COMPONENT' },
+  { icon: 'redux', title: 'redux' },
+  { icon: 'git', title: 'git' },
+]
