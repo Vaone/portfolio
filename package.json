@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write src",
-    "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input"
+    "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
+    "build": "tsc && vite build && javascript-obfuscator dist --config obfuscator-config.json"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -28,6 +28,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "javascript-obfuscator": "^4.1.0",
     "stylelint": "^16.6.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
