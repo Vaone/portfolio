@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
+import { About } from '@/pages/about/About'
+import { Footer } from '@/pages/footer/Footer'
+import { Form } from '@/pages/form/Form'
+import { Header } from '@/pages/header/Header'
+import { Main } from '@/pages/main/Main'
+import { Projects } from '@/pages/projects/Projects'
+import { Skills } from '@/pages/skills/Skills'
 import { themes } from '@/styles/Theme'
 import { ThemeProvider } from 'styled-components'
 
 import { skillItems } from './common/constants'
-import { About } from './layout/about/About'
-import { Footer } from './layout/footer/Footer'
-import { Form } from './layout/form/Form'
-import { Header } from './layout/header/Header'
-import { Main } from './layout/main/Main'
-import { Projects } from './layout/projects/Projects'
-import { Skills } from './layout/skills/Skills'
 import { GlobalStyle } from './styles/Global.styled'
 
 function App() {
