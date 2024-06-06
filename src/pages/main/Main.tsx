@@ -2,9 +2,12 @@ import arrow from '@/assets/images/arrow.svg'
 import heroWebp from '@/assets/images/welcomepage.webp'
 import { Button } from '@/components/Button/Button'
 import { Container } from '@/components/Container'
+import { useMedia } from '@/hooks/useMedia'
 import { styled } from 'styled-components'
 
 export const Main = ({}) => {
+  const { isTabletScreen } = useMedia()
+
   return (
     <StyledMain>
       <Container>
@@ -18,35 +21,39 @@ export const Main = ({}) => {
           <Button>Contact Me</Button>
         </StyledLeftSide>
         <StyledRightSide>
-          <img alt={'backgoundImage'} src={heroWebp} />
+          <img alt={'backgroundImage'} src={heroWebp} />
         </StyledRightSide>
-        <StyledArrowImage>
-          <svg
-            fill={'currentColor'}
-            height={'32'}
-            viewBox={'0 0 32 32'}
-            width={'32'}
-            xmlns={'http://www.w3.org/2000/svg'}
-          >
-            <use xlinkHref={`${arrow}#arrow`} />
-          </svg>
-        </StyledArrowImage>
+        {!isTabletScreen && (
+          <StyledArrowImage>
+            <svg
+              fill={'currentColor'}
+              height={'32'}
+              viewBox={'0 0 32 32'}
+              width={'32'}
+              xmlns={'http://www.w3.org/2000/svg'}
+            >
+              <use xlinkHref={`${arrow}#arrow`} />
+            </svg>
+          </StyledArrowImage>
+        )}
       </Container>
     </StyledMain>
   )
 }
 
 const StyledMain = styled.section`
-  & > div {
-    display: flex;
-    height: 750px;
-    position: relative;
+  height: 750px;
+
+  @media (max-width: 768px) {
+    height: auto;
   }
 
-  @media (min-width: 768px) {
-    & > div {
-      flex-direction: row;
-      height: 750px;
+  & > div {
+    display: flex;
+    position: relative;
+
+    @media (max-width: 650px) {
+      flex-direction: column;
     }
   }
 `
@@ -76,15 +83,15 @@ const StyledLeftSide = styled.div`
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
-    color: ${({ theme }) => theme.colors.SecondaryFont};
+    color: ${({ theme }) => theme.colors.PrimaryFont};
     margin-bottom: 10px;
   }
 
   h2 {
     background: ${({ theme }) => theme.colors.Primary};
+    color: ${({ theme }) => theme.colors.PrimaryFont};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
     display: table;
 
     font-size: 72px;

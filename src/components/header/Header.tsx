@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import { NavLinks } from '@/components/nav/NabLinks'
 import { NavigationMenu } from '@/components/nav/Nav'
 import { NavButton } from '@/components/nav/NavButton'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { useMedia } from '@/hooks/useMedia'
 import { styled } from 'styled-components'
 
 type Props = {
@@ -17,15 +17,14 @@ export const Header = ({ onThemeChange }: Props) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
-
-  const isSmallScreen = useMediaQuery('(max-width: 768px)')
+  const { isPhoneScreen, isTabletScreen } = useMedia()
 
   return (
     <StyledHeader>
       <Container>
-        <StyledLinkHome>Home</StyledLinkHome>
+        {!isPhoneScreen && <StyledLinkHome>Home</StyledLinkHome>}
         <StyledNav>
-          {isSmallScreen ? (
+          {isTabletScreen ? (
             <>
               <NavButton onClick={toggleMenu} />
               <NavigationMenu isOpen={isOpen} onClose={toggleMenu} onThemeChange={onThemeChange} />
@@ -57,12 +56,6 @@ const StyledHeader = styled.header`
 
     @media (max-width: 768px) {
       height: 60px;
-    }
-
-    @media (max-width: 480px) {
-      flex-direction: column;
-      height: auto;
-      padding: 10px;
     }
   }
 `
