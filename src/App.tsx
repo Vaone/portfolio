@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
+import { Header } from '@/components/header/Header'
 import { About } from '@/pages/about/About'
 import { Footer } from '@/pages/footer/Footer'
 import { Form } from '@/pages/form/Form'
-import { Header } from '@/pages/header/Header'
 import { Main } from '@/pages/main/Main'
 import { Projects } from '@/pages/projects/Projects'
 import { Skills } from '@/pages/skills/Skills'

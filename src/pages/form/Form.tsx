@@ -40,6 +40,10 @@ export const Form = () => {
 
 const StyledSectionForm = styled.section`
   height: 550px;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `
 
 const StyledForm = styled.form`
@@ -47,6 +51,11 @@ const StyledForm = styled.form`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 `
 
 const StyledInputTitle = styled.span`
@@ -54,6 +63,10 @@ const StyledInputTitle = styled.span`
   font-weight: 400;
   line-height: 17px;
   margin: 0 0 6px 0;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const StyledInput = styled.div`
@@ -70,6 +83,14 @@ const StyledInput = styled.div`
   button {
     margin: 20px 0 0 0;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    #textarea {
+      height: 120px;
+    }
+  }
 `
 
 const RequiredInput = styled.span`
@@ -84,6 +105,10 @@ const RequiredInput = styled.span`
   color: #c05353;
   text-align: right;
   opacity: 1;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const StyledBorderWrapper = styled.div`
@@ -121,6 +146,17 @@ const StyledBorderWrapper = styled.div`
 
     &:not(:placeholder-shown) + ${RequiredInput} {
       opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+
+    input,
+    textarea {
+      font-size: 14px;
+      padding: 10px;
     }
   }
 `

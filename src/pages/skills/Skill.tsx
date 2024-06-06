@@ -41,4 +41,15 @@ const StyledSkill = styled.div`
   span {
     text-transform: uppercase;
   }
+
+  @media (min-width: 768px) {
+    svg {
+      width: 120px; /* larger width for larger screens */
+      height: 120px; /* larger height for larger screens */
+    }
+
+    span {
+      font-size: 16px; /* larger font size for larger screens */
+    }
+  }
 `

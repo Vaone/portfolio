@@ -42,6 +42,13 @@ const StyledMain = styled.section`
     height: 750px;
     position: relative;
   }
+
+  @media (min-width: 768px) {
+    & > div {
+      flex-direction: row;
+      height: 750px;
+    }
+  }
 `
 
 const StyledArrowImage = styled.div`
@@ -51,6 +58,11 @@ const StyledArrowImage = styled.div`
 
   svg {
     fill: ${({ theme }) => theme.colors.Primary};
+  }
+
+  @media (max-width: 768px) {
+    position: static;
+    margin-top: 20px;
   }
 `
 
@@ -91,6 +103,17 @@ const StyledLeftSide = styled.div`
   button {
     width: 135px;
   }
+
+  @media (min-width: 768px) {
+    width: 50%;
+    text-align: left;
+    padding: 0;
+
+    h2 {
+      font-size: 72px;
+      line-height: 88px;
+    }
+  }
 `
 
 const StyledRightSide = styled.div`
@@ -102,5 +125,10 @@ const StyledRightSide = styled.div`
   img {
     width: 100%;
     height: auto;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+    padding: 0;
   }
 `

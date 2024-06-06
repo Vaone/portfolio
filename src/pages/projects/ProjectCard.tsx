@@ -37,14 +37,32 @@ const StyledCard = styled.div`
   img {
     height: 24em;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    img {
+      height: auto;
+    }
+  }
 `
 const StyledContentCard = styled.div`
   margin: 0 26px;
+
+  @media (max-width: 768px) {
+    margin: 0 16px;
+  }
 `
+
 const StyledCardTitle = styled.div`
   text-transform: uppercase;
   margin: 30px 0 0 0;
+
+  @media (max-width: 768px) {
+    margin: 20px 0 0 0;
+    font-size: 1.2em;
+  }
 `
+
 const StyledCardTechs = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -54,10 +72,20 @@ const StyledCardTechs = styled.div`
   button {
     text-transform: uppercase;
     padding: 8px 16px;
+
+    @media (max-width: 768px) {
+      padding: 6px 12px;
+      font-size: 0.9em;
+    }
   }
 `
 const StyledCardDescription = styled.div`
   margin: 20px 0 30px 0;
   font-weight: 400;
   line-height: 24px;
+
+  @media (max-width: 768px) {
+    margin: 15px 0 20px 0;
+    font-size: 0.9em;
+  }
 `

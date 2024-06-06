@@ -75,6 +75,11 @@ const StyledFooter = styled.footer`
     flex-direction: column;
     height: 490px;
     margin-top: 0;
+
+    @media (max-width: 768px) {
+      height: auto;
+      padding: 20px;
+    }
   }
 `
 const StyledSocialsWrapper = styled.div`
@@ -83,6 +88,17 @@ const StyledSocialsWrapper = styled.div`
   align-items: center;
   gap: 73px;
   margin: 0 0 50px 0;
+
+  @media (max-width: 768px) {
+    gap: 40px;
+    margin: 0 0 30px 0;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 0 20px 0;
+  }
 `
 
 const StyledLinksWrapper = styled.div`
@@ -92,5 +108,16 @@ const StyledLinksWrapper = styled.div`
 
   a {
     color: ${({ theme }) => theme.colors.PrimaryFont};
+  }
+
+  @media (max-width: 768px) {
+    gap: 24px;
+    margin: 0 0 30px 0;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 0 20px 0;
   }
 `

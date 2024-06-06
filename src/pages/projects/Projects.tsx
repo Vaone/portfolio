@@ -86,6 +86,14 @@ const StyledProjects = styled.section`
     justify-content: center;
     flex-direction: column;
   }
+
+  @media (min-width: 768px) {
+    & > div {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+  }
 `
 const StyledWrapper = styled.div`
   display: flex;
@@ -93,4 +101,8 @@ const StyledWrapper = styled.div`
   margin-top: 32px;
   flex-wrap: wrap;
   gap: 28px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
 `

@@ -51,4 +51,24 @@ const StyledContentWrapper = styled.div`
     grid-column: 2/3;
     text-align: center;
   }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 120px);
+    gap: 50px 100px;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 120px);
+    gap: 40px 80px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 120px);
+    gap: 30px 60px;
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(1, 120px);
+    gap: 20px 40px;
+  }
 `
