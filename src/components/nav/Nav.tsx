@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, RefObject, SetStateAction } from 'react'
 
 import { NavLinks } from '@/components/nav/NabLinks'
 import { styled } from 'styled-components'
@@ -7,12 +7,13 @@ type Props = {
   isOpen: boolean
   onClose: () => void
   onThemeChange: Dispatch<SetStateAction<number>>
+  projectRef: RefObject<HTMLDivElement>
 }
 
-export const NavigationMenu = ({ isOpen, onClose, onThemeChange }: Props) => {
+export const NavigationMenu = ({ isOpen, onClose, onThemeChange, projectRef }: Props) => {
   return (
     <StyledNav isOpen={isOpen}>
-      <NavLinks onThemeChange={onThemeChange} />
+      <NavLinks onThemeChange={onThemeChange} projectRef={projectRef} />
       <CloseButton onClick={onClose} />
     </StyledNav>
   )

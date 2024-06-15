@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, RefObject, SetStateAction, useState } from 'react'
 
 import { Container } from '@/components/Container'
 import { NavLinks } from '@/components/nav/NabLinks'
@@ -9,28 +9,34 @@ import { styled } from 'styled-components'
 
 type Props = {
   onThemeChange: Dispatch<SetStateAction<number>>
+  projectRef: RefObject<HTMLDivElement>
 }
 
-export const Header = ({ onThemeChange }: Props) => {
+export const Header = ({ onThemeChange, projectRef }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
-  const { isPhoneScreen, isTabletScreen } = useMedia()
+
+  const { isTabletScreen } = useMedia()
 
   return (
     <StyledHeader>
       <Container>
-        {!isPhoneScreen && <StyledLinkHome>Home</StyledLinkHome>}
         <StyledNav>
           {isTabletScreen ? (
             <>
               <NavButton onClick={toggleMenu} />
-              <NavigationMenu isOpen={isOpen} onClose={toggleMenu} onThemeChange={onThemeChange} />
+              <NavigationMenu
+                isOpen={isOpen}
+                onClose={toggleMenu}
+                onThemeChange={onThemeChange}
+                projectRef={projectRef}
+              />
             </>
           ) : (
-            <NavLinks onThemeChange={onThemeChange} />
+            <NavLinks onThemeChange={onThemeChange} projectRef={projectRef} />
           )}
         </StyledNav>
       </Container>
@@ -49,7 +55,7 @@ const StyledHeader = styled.header`
 
   & > div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100px;
     margin-top: 0;
@@ -69,13 +75,5 @@ const StyledNav = styled.nav`
   @media (max-width: 480px) {
     flex-direction: column;
     align-items: center;
-  }
-`
-
-const StyledLinkHome = styled.a`
-  cursor: pointer;
-
-  @media (max-width: 480px) {
-    margin-bottom: 10px;
   }
 `

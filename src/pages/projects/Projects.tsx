@@ -1,3 +1,5 @@
+import { forwardRef } from 'react'
+
 import workImage from '@/assets/images/work.webp'
 import { Container } from '@/components/Container'
 import { styled } from 'styled-components'
@@ -56,12 +58,13 @@ const projectItems = [
   },
 ]
 
-export const Projects = () => {
+type Props = {}
+
+export const Projects = forwardRef<HTMLDivElement, Props>((_, ref) => {
   return (
-    <StyledProjects>
+    <StyledProjects ref={ref}>
       <Container>
         <h2>Projects</h2>
-
         <StyledWrapper>
           {projectItems.map(item => {
             return (
@@ -78,9 +81,11 @@ export const Projects = () => {
       </Container>
     </StyledProjects>
   )
-}
+})
 
 const StyledProjects = styled.section`
+  padding-top: 30px;
+
   & > div {
     display: flex;
     justify-content: center;
@@ -95,10 +100,11 @@ const StyledProjects = styled.section`
     }
   }
 `
+
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  padding-top: 32px;
   flex-wrap: wrap;
   gap: 28px;
 

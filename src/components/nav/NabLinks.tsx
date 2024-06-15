@@ -1,21 +1,25 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, RefObject, SetStateAction } from 'react'
 
 import { Button } from '@/components/Button/Button'
+import { useScrollTo } from '@/hooks/useScrollTo'
 import { themes } from '@/styles/Theme'
 import { styled } from 'styled-components'
 
 type Props = {
   onThemeChange: Dispatch<SetStateAction<number>>
+  projectRef: RefObject<HTMLDivElement>
 }
 
-export const NavLinks = ({ onThemeChange }: Props) => {
+export const NavLinks = ({ onThemeChange, projectRef }: Props) => {
   const onThemeHandler = () => {
     onThemeChange(prevIndex => (prevIndex + 1) % themes.length)
   }
 
+  const { onScrollToBlock } = useScrollTo()
+
   return (
     <>
-      <StyledLink>Projects</StyledLink>
+      <StyledLink onClick={() => onScrollToBlock(projectRef)}>Projects</StyledLink>
       <StyledLink>Contact</StyledLink>
       <Button onClick={onThemeHandler}>Theme Changer</Button>
     </>
