@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import { Header } from '@/components/header/Header'
 import { About } from '@/pages/about/About'
@@ -16,14 +16,16 @@ import { GlobalStyle } from './styles/Global.styled'
 function App() {
   const [themeIndex, setThemeIndex] = useState<number>(0)
 
+  const projectRef = useRef<HTMLDivElement>(null)
+
   return (
     <ThemeProvider theme={themes[themeIndex]}>
       <div className={'App'}>
         <div className={'wrapper'}>
-          <Header onThemeChange={setThemeIndex} />
+          <Header onThemeChange={setThemeIndex} projectRef={projectRef} />
           <Main />
           <About />
-          <Projects />
+          <Projects ref={projectRef} />
           <Skills SkillItems={skillItems} />
           <Form />
           <Footer />
