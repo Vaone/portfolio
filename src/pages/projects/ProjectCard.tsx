@@ -11,7 +11,9 @@ type ProjectCardPropsType = {
 export const ProjectCard = (props: ProjectCardPropsType) => {
   return (
     <StyledCard>
-      <img alt={props.title} src={props.image} />
+      <a href={'https://flashcards-one-dusky.vercel.app/'}>
+        <img alt={props.title} src={props.image} />
+      </a>
       <StyledContentCard>
         <StyledCardTitle>{props.title}</StyledCardTitle>
         <StyledCardTechs>
@@ -52,7 +54,6 @@ const StyledContentCard = styled.div`
     margin: 0 16px;
   }
 `
-
 const StyledCardTitle = styled.div`
   text-transform: uppercase;
   margin: 30px 0 0 0;
@@ -62,7 +63,6 @@ const StyledCardTitle = styled.div`
     font-size: 1.2em;
   }
 `
-
 const StyledCardTechs = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -72,6 +72,7 @@ const StyledCardTechs = styled.div`
   button {
     text-transform: uppercase;
     padding: 8px 16px;
+    cursor: default;
 
     @media (max-width: 768px) {
       padding: 6px 12px;
@@ -79,6 +80,7 @@ const StyledCardTechs = styled.div`
     }
   }
 `
+
 const StyledCardDescription = styled.div`
   margin: 20px 0 30px 0;
   font-weight: 400;

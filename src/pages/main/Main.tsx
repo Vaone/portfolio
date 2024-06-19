@@ -1,3 +1,5 @@
+import { forwardRef } from 'react'
+
 import arrow from '@/assets/images/arrow.svg'
 import heroWebp from '@/assets/images/welcomepage.webp'
 import { Button } from '@/components/Button/Button'
@@ -5,19 +7,18 @@ import { Container } from '@/components/Container'
 import { useMedia } from '@/hooks/useMedia'
 import { styled } from 'styled-components'
 
-export const Main = ({}) => {
+type Props = {}
+
+export const Main = forwardRef<HTMLDivElement, Props>((_, ref) => {
   const { isTabletScreen } = useMedia()
 
   return (
-    <StyledMain>
+    <StyledMain ref={ref}>
       <Container>
         <StyledLeftSide>
-          <h1>WEB DEVELOPER</h1>
+          <h1>Frontend Developer</h1>
           <h2>Kim Vladimir</h2>
-          <span>
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-            consequat duis enim velit mollit. Exercitation veniam consequat sunt.
-          </span>
+          <span></span>
           <Button>Contact Me</Button>
         </StyledLeftSide>
         <StyledRightSide>
@@ -39,7 +40,7 @@ export const Main = ({}) => {
       </Container>
     </StyledMain>
   )
-}
+})
 
 const StyledMain = styled.section`
   height: 750px;
