@@ -12,6 +12,7 @@ const projectItems = [
   {
     description: 'FlashCards - Cards to learn to learn smth',
     id: 1,
+    link: 'https://flashcards-one-dusky.vercel.app/',
     src: fcard,
     techs: [
       'Typescript',
@@ -27,6 +28,7 @@ const projectItems = [
   {
     description: 'Stg - Cloud Storage',
     id: 2,
+    link: 'https://choogi.xyz/',
     src: strg,
     techs: ['Javascript', 'React', 'Redux', 'JWT', 'Mongo', 'Express'],
     title: 'Cloud Storage',
@@ -35,6 +37,7 @@ const projectItems = [
     description:
       'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
     id: 5,
+    link: 'https://choogi.xyz/',
     src: workImage,
     techs: ['Javascript', 'Typescript', 'React', 'Redux'],
     title: 'TITLE PROJECT',
@@ -55,6 +58,7 @@ export const Projects = forwardRef<HTMLDivElement, Props>((_, ref) => {
                 description={item.description}
                 image={item.src}
                 key={item.id}
+                link={item.link}
                 techs={item.techs}
                 title={item.title}
               />

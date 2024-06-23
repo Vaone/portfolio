@@ -4,6 +4,7 @@ import { styled } from 'styled-components'
 type ProjectCardPropsType = {
   description: string
   image: string
+  link: string
   techs: string[]
   title: string
 }
@@ -11,7 +12,7 @@ type ProjectCardPropsType = {
 export const ProjectCard = (props: ProjectCardPropsType) => {
   return (
     <StyledCard>
-      <a href={'https://flashcards-one-dusky.vercel.app/'}>
+      <a href={props.link}>
         <img alt={props.title} src={props.image} />
       </a>
       <StyledContentCard>
