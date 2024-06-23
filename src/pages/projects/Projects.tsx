@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
 
 import fcard from '@/assets/images/FCards.png'
+import strg from '@/assets/images/strg.png'
 import workImage from '@/assets/images/work.webp'
 import { Container } from '@/components/Container'
 import { styled } from 'styled-components'
@@ -24,28 +25,11 @@ const projectItems = [
     title: 'FlashCards',
   },
   {
-    description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+    description: 'Stg - Cloud Storage',
     id: 2,
-    src: workImage,
-    techs: ['Javascript', 'React-Native', 'Redux'],
-    title: 'Instagram',
-  },
-  {
-    description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-    id: 3,
-    src: workImage,
-    techs: ['Javascript', 'Typescript', 'React', 'Redux'],
-    title: 'TITLE PROJECT',
-  },
-  {
-    description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-    id: 4,
-    src: workImage,
-    techs: ['Javascript', 'React-Native', 'Redux'],
-    title: 'Instagram',
+    src: strg,
+    techs: ['Javascript', 'React', 'Redux', 'JWT', 'Mongo', 'Express'],
+    title: 'Cloud Storage',
   },
   {
     description:
